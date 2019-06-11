@@ -5,6 +5,7 @@ application:
 	errorPresenter: Error
 	mapping:
 		*: App\*Module\Presenters\*Presenter
+                
 
 
 session:
@@ -12,4 +13,11 @@ session:
 
 
 services:
+	- App\Model\PostManager
 	router: App\Router\RouterFactory::createRouter
+        
+
+database:
+    dsn: 'mysql:host=127.0.0.1;dbname=nette-blog'
+    user: root
+    password: 

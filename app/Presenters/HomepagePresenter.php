@@ -5,17 +5,24 @@ declare(strict_types=1);
 namespace App\Presenters;
 
 use Nette;
+use App\Model\PostManager;
 
 
 class HomepagePresenter extends Nette\Application\UI\Presenter
 {
     /** @var Nette\Database\Context */
-    private $database;
+    
+    private $postManager;
 
-    public function __construct(Nette\Database\Context $database)
+    public function __construct(PostManager $postManager)
     {
-        $this->database = $database;
+        $this->postManager = $postManager;
     }
 
     // ...
+    
+    public function renderDefault()
+{
+    $this->template->posts = $this->postManager->getAll();  
+}
 }
