@@ -1,13 +1,33 @@
 {block content}
+<div class="container" >
+    <div class="row">
+        <div class="col-sm-10">
+            <br><br>
+            <h1 n:block="title">{$post->title}</h1>
+            <div class="date"><p class="text-secondary">{$post->created_at|date:'F j, Y'}</p></div>
+            <div class="post">{$post->content}</div>
+            <p><a n:href="Homepage:default">← zpět na výpis příspěvků</a></p>
+        </div>
+        <div class="col-sm-2 " n:if="$user->loggedIn">
+            <br><br>
+            <a  class="btn btn-info" n:href="Edit $post->id">Upravit příspěvek</a>
+        </div>
+    </div>
+</div>
+
 <div class="container">
+    <br>
+    <br>
+    <h4>Komentáře</h4>
 
-
-
-<h1 n:block="title">{$post->title}</h1>
-<div class="date"><p class="text-secondary">{$post->created_at|date:'F j, Y'}</p></div>
-<div class="post">{$post->content}</div>
-
-<br>
-<br>
-<p><a n:href="Homepage:default">← zpět na výpis příspěvků</a></p>
+    <div class="comments">
+        {foreach $comments as $comment}
+            <p><b class="text-danger">{$comment->name}</b> napsal:</p>
+            <div><p>        {$comment->content}</p></div>
+        {/foreach}
+    </div>
+    <br>
+    <br>
+    <h5>Komentovat</h5>
+    {control commentForm}
 </div>

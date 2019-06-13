@@ -4,12 +4,13 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit091ed5d24b4127ffc48411e34be2086f
+class ComposerStaticInit8f5891a0501822963997edcce095ad00
 {
     public static $files = array (
         '59af96974553a1fc6407327354b6f47e' => __DIR__ . '/..' . '/nette/di/src/compatibility.php',
         '19a7e2c3b1d506dcdc1b60aab8e102e4' => __DIR__ . '/..' . '/tracy/tracy/src/Tracy/shortcuts.php',
         'e7a6fd2e7a869bb207158e9416bdd9b0' => __DIR__ . '/..' . '/nette/application/src/compatibility.php',
+        'a1d067aa2e53d6b47171c03cfc0ea5be' => __DIR__ . '/..' . '/nette/safe-stream/src/loader.php',
     );
 
     public static $classMap = array (
@@ -400,7 +401,7 @@ class ComposerStaticInit091ed5d24b4127ffc48411e34be2086f
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit091ed5d24b4127ffc48411e34be2086f::$classMap;
+            $loader->classMap = ComposerStaticInit8f5891a0501822963997edcce095ad00::$classMap;
 
         }, null, ClassLoader::class);
     }

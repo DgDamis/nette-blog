@@ -73,9 +73,6 @@ class PostManager
             $this->database->table(self::TABLE_NAME)->insert($values);
         }
         
-        public function update($id, $values) {
-            $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id)->update($values);
-        }
         public function updateStars($id, $stars) {
             $this->database->table(self::TABLE_NAME)->where(self::COLUMN_ID, $id)->update(['stars'=>$stars]);
         }
@@ -90,5 +87,19 @@ class PostManager
         
         public function deleteComment($id) {
             $this->database->table('comments')->where('id', $id)->delete();
-        }        
+        }
+
+        public function insertPost(\stdClass $values) {
+		$this->database->table(self::TABLE_NAME)->insert([
+			self::COLUMN_TITLE => $values->title,
+			self::COLUMN_CONTENT => $values->content,
+		]);
+	}
+        
+        public function updatePost($id, \stdClass $values) {
+		$this->database->table(self::TABLE_NAME)->get($id)->update([
+			self::COLUMN_TITLE => $values->title,
+			self::COLUMN_CONTENT => $values->content,
+		]);
+	}
 }

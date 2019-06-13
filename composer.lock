@@ -4,8 +4,37 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e7cc66184e0bf1568dc4cc39fbf7a64",
+    "content-hash": "43f6ee5c83d31430700a593cff792e79",
     "packages": [
+        {
+            "name": "dg/adminer-custom",
+            "version": "v1.18.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dg/adminer-custom.git",
+                "reference": "5a0e173d0dcb9cbaa0f03aeee12036cee80a5bed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dg/adminer-custom/zipball/5a0e173d0dcb9cbaa0f03aeee12036cee80a5bed",
+                "reference": "5a0e173d0dcb9cbaa0f03aeee12036cee80a5bed",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Customization for Adminer, the best database management tool written in PHP.",
+            "keywords": [
+                "database",
+                "elasticsearch",
+                "mongodb",
+                "mssql",
+                "mysql",
+                "oracle",
+                "postgresql",
+                "sqlite"
+            ],
+            "time": "2019-04-16T20:25:42+00:00"
+        },
         {
             "name": "latte/latte",
             "version": "v2.5.1",
@@ -716,16 +745,16 @@
         },
         {
             "name": "nette/mail",
-            "version": "v3.0.0",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/mail.git",
-                "reference": "ce0064772ab3a6a01658c7368b63978597d60e08"
+                "reference": "102ff80c052081ecd1ee38975a4a86718e55abce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/mail/zipball/ce0064772ab3a6a01658c7368b63978597d60e08",
-                "reference": "ce0064772ab3a6a01658c7368b63978597d60e08",
+                "url": "https://api.github.com/repos/nette/mail/zipball/102ff80c052081ecd1ee38975a4a86718e55abce",
+                "reference": "102ff80c052081ecd1ee38975a4a86718e55abce",
                 "shasum": ""
             },
             "require": {
@@ -734,7 +763,7 @@
                 "php": ">=7.1"
             },
             "conflict": {
-                "nette/nette": "<2.2"
+                "nette/di": "<3.0-stable"
             },
             "require-dev": {
                 "nette/di": "^3.0.0",
@@ -771,7 +800,7 @@
                     "homepage": "https://nette.org/contributors"
                 }
             ],
-            "description": "? Nette Mail: handy email creation and transfer library for PHP with both text and MIME-compliant support.",
+            "description": "📧 Nette Mail: handy email creation and transfer library for PHP with both text and MIME-compliant support.",
             "homepage": "https://nette.org",
             "keywords": [
                 "mail",
@@ -780,7 +809,7 @@
                 "nette",
                 "smtp"
             ],
-            "time": "2019-02-20T06:53:15+00:00"
+            "time": "2019-06-03T11:21:41+00:00"
         },
         {
             "name": "nette/neon",
@@ -1020,6 +1049,64 @@
                 "nette"
             ],
             "time": "2019-02-13T15:57:18+00:00"
+        },
+        {
+            "name": "nette/safe-stream",
+            "version": "v2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nette/safe-stream.git",
+                "reference": "5e46d5fe397956d697501785d50b16fecea8e935"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nette/safe-stream/zipball/5e46d5fe397956d697501785d50b16fecea8e935",
+                "reference": "5e46d5fe397956d697501785d50b16fecea8e935",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "nette/tester": "^2.0",
+                "tracy/tracy": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/loader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause",
+                "GPL-2.0",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "David Grudl",
+                    "homepage": "https://davidgrudl.com"
+                },
+                {
+                    "name": "Nette Community",
+                    "homepage": "https://nette.org/contributors"
+                }
+            ],
+            "description": "Nette SafeStream: atomic and safe manipulation with files via native PHP functions.",
+            "homepage": "https://nette.org",
+            "keywords": [
+                "atomic",
+                "filesystem",
+                "nette",
+                "safe"
+            ],
+            "time": "2019-02-06T00:22:25+00:00"
         },
         {
             "name": "nette/schema",
@@ -1357,7 +1444,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">= 7.1"
+        "php": ">=7.1"
     },
     "platform-dev": [],
     "platform-overrides": {
