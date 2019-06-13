@@ -92,6 +92,10 @@ final class UserManager implements Nette\Security\IAuthenticator
        // public function getUser(){
         //    return $this->user;
        // }
+        
+       public function getUser($id){
+           return $this->database->table(self::TABLE_NAME)->where('id = ?', $id)->fetch();
+       }
 }
 
 

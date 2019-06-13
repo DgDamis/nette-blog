@@ -2,16 +2,21 @@
 {block content}
 <div class="container" >
     <br>
-    <div class="container row" n:if="$user->loggedIn"><div class="col-sm-10"></div><div class="col-sm-2"><a  class="btn btn-info" n:href="Post:create">Nový příspěvek</a></div></div>
+   <div class="container row" n:if="$user->isInRole('admin')">
+        <div class="col-sm-10">
+        </div><div class="col-sm-2">
+            <a class="btn btn-info" n:href="Post:create">Nový příspěvek</a>
+        </div>
+    </div>
     <br>
     {foreach $posts as $post}
         <div class="post container border rounded bg-light row">
             <div class="col-sm-11">
-            <h2><a n:href="Post:show $post->id">{$post->title}</a></h2>
-            <div class="date"><p class="text-secondary">{$post->created_at|date:'F j, Y'}</p></div>
-            <div>{$post->content|truncate:500,'...'}    --->    <a n:href="Post:show $post->id"> Přejít na článek</a></div>
+                <h2><a n:href="Post:show $post->id">{$post->title}</a></h2>
+                <div class="date"><p class="text-secondary">{$post->created_at|date:'F j, Y'}</p></div>
+                <div>{$post->content|truncate:500,'...'}    --->    <a n:href="Post:show $post->id"> Přejít na článek</a></div>
             </div>
-            <div class="col-sm-1" n:if="$user->loggedIn">
+            <div class="col-sm-1" n:if="$user->isInRole('admin')">
                 <br>
                 <a  class="btn btn-danger" n:href="Post:delete $post->id">Smazat</a>
             </div>
