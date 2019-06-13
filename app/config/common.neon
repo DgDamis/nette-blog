@@ -18,6 +18,6 @@ services:
         
 
 database:
-    dsn: 'mysql:host=127.0.0.1;dbname=nette-blog'
+    dsn: 'mysql:host=127.0.0.1;dbname=nette_blog'
     user: root
     password: 

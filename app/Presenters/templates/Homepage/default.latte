@@ -1,16 +1,14 @@
 {* This is the welcome page, you can delete it *}
 {block content}
-<div class="container">
-    <h1 n:block="title">Můj blog</h1>
-
+    <div class="container">
+        <br>
     {foreach $posts as $post}
-    <div class="post">
-        <div class="date">{$post->created_at|date:'F j, Y'}</div>
-
+    <div class="post container border rounded bg-light">
         <h2><a n:href="Post:show $post->id">{$post->title}</a></h2>
-
+        <div class="date"><p class="text-secondary">{$post->created_at|date:'F j, Y'}</p></div>
         <div>{$post->content}</div>
     </div>
+    <br>
     {/foreach}
 </div>
 {/block}
