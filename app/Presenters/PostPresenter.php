@@ -52,7 +52,7 @@ class PostPresenter extends Nette\Application\UI\Presenter {
 
     protected function createComponentCommentForm(): Form {
         $form = new Form; // means Nette\Application\UI\Form
-        $form->addTextArea('content', 'Komentář:')
+        $form->addTextArea('content')
                 ->setRequired();
         $form->addSubmit('send', 'Publikovat komentář');
         $form->onSuccess[] = [$this, 'commentFormSucceeded'];

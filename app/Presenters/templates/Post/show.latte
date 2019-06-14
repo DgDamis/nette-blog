@@ -5,7 +5,7 @@
             <br><br>
             <h1 n:block="title">{$post->title}</h1>
             <div class="date"><p class="text-secondary">{$post->created_at|date:'F j, Y'}</p></div>
-            <div class="post">{$post->content}</div>
+            <div class="post">{$post->content|noescape}</div>
             <p><a n:href="Homepage:default">← zpět na výpis příspěvků</a></p>
         </div>
         <div class="col-sm-2 " n:if="$user->isInRole('admin')">
@@ -25,7 +25,7 @@
             <div class="row">
             <div class="col-sm-10">
                 <p><b class="text-danger">{$comment['user']}</b> napsal:</p>
-                <p>        {$comment['comment']}</p>
+                <p>        {$comment['comment']|noescape}</p>
             </div>
             {if $user->isLoggedIn()}
             {if $comment['user'] == $user->getIdentity()->username || $user->isInRole('admin')}
@@ -42,9 +42,11 @@
     <h5>Komentovat</h5>
     {if $user->isLoggedIn()}
         <div n:if="$user->isLoggedIn()">
-            {control commentForm}
+            {include bootstrap4-form commentForm}
         </div>
     {else}
         <p class="error">Pro komentování příspěvků se musíte přihlásit!</p>
     {/if}
+    <br>
+    <br>
 </div>

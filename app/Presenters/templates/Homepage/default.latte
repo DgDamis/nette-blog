@@ -14,7 +14,7 @@
             <div class="col-sm-11">
                 <h2><a n:href="Post:show $post->id">{$post->title}</a></h2>
                 <div class="date"><p class="text-secondary">{$post->created_at|date:'F j, Y'}</p></div>
-                <div>{$post->content|truncate:500,'...'}    --->    <a n:href="Post:show $post->id"> Přejít na článek</a></div>
+                <div>{$post->content|truncate:500,'...'|noescape}    --->    <a n:href="Post:show $post->id"> Přečíst článek</a></div>
             </div>
             <div class="col-sm-1" n:if="$user->isInRole('admin')">
                 <br>
