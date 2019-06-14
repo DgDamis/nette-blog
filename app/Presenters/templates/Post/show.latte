@@ -27,10 +27,12 @@
                 <p><b class="text-danger">{$comment['user']}</b> napsal:</p>
                 <p>        {$comment['comment']}</p>
             </div>
+            {if $user->isLoggedIn()}
             {if $comment['user'] == $user->getIdentity()->username || $user->isInRole('admin')}
             <div class="col-sm-2">
                 <a class="btn btn-danger" n:href="Post:deleteComment $comment['id'], $post->id">Smazat</a>
             </div>
+            {/if}
             {/if}
             </div>
         {/foreach}
